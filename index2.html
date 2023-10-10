@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Kendaraan</title>
+</head>
+<body>
+
+<h2>Pilih Kendaraan dari Dropdown Menu</h2>
+<select id="dropdown">
+  <option value="mobil">Mobil</option>
+  <option value="motor">Motor</option>
+  <option value="sepeda">Sepeda</option>
+</select>
+
+<h2>Pilih Kendaraan dari Listbox (Multiple Selection)</h2>
+<select id="listbox" multiple>
+  <option value="suv">SUV</option>
+  <option value="sedan">Sedan</option>
+  <option value="hatchback">Hatchback</option>
+  <option value="motorcycle">Motorcycle</option>
+  <option value="scooter">Scooter</option>
+  <option value="bicycle">Bicycle</option>
+</select>
+
+<script>
+  const dropdown = document.getElementById('dropdown');
+  const listbox = document.getElementById('listbox');
+
+  // Mendengarkan perubahan pada dropdown
+  dropdown.addEventListener('change', () => {
+    console.log('Kendaraan yang dipilih dari dropdown: ' + dropdown.value);
+  });
+
+  // Mendengarkan perubahan pada listbox
+  listbox.addEventListener('change', () => {
+    const selectedOptions = Array.from(listbox.selectedOptions).map(option => option.value);
+    console.log('Kendaraan yang dipilih dari listbox: ' + selectedOptions.join(', '));
+  });
+</script>
+
+</body>
+</html>
+
